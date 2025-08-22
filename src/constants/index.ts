@@ -31,9 +31,6 @@ import {
   git,
   figma,
   docker,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 } from '../assets';
 
