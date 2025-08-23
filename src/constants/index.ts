@@ -8,6 +8,7 @@ import type {
 } from '../types';
 import womanImg from '../assets/woman.png';
 import man from '../assets/profile-hero.jpg';
+import ronin from '../assets/ronin.png';
 import devops from '../assets/devops.png'; // or .svg
 import fullStack from '../assets/fullStack.png';
 import reactlogo from '../assets/company/reactlogo.png';
@@ -15,8 +16,7 @@ import NodejsLogo from '../assets/company/NodejsLogo.png';
 import mongodblogo from '../assets/company/mongodblogo.png';
 import cloud from '../assets/company/cloud.png';
 import kfc from '../assets/kfc.png';
-import ronin from '../assets/ronin.png';
-import Dashboard from '../assets/Dashboard.png';
+import Dashboard from '../assets/Dashbaord.png';
 import enatega from '../assets/enatega.png';
 
 import {
@@ -216,7 +216,7 @@ const projects: TProject[] = [
   {
     name: 'KFC Landing Page',
     description:
-      'A modern, responsive KFC landing page showcasing menu items, promotions, and brand visuals with a fast, mobile-friendly UI/UX.',
+      'A Modern, responsive KFC landing page showcasing menu, promotions, and brand visuals with fast, mobile-friendly UI.',
     tags: [
       {
         name: 'html & css',

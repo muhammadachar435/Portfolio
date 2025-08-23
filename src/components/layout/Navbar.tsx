@@ -58,7 +58,6 @@ const Navbar = () => {
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link to="https://wa.me/923048438299" target="blank" className="fixed bottom-7 right-7">
           <img src={watsapImg} alt="" className="w-12 h-12" />
-         
         </Link>
         <Link
           to="/"

@@ -21,9 +21,12 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       <Tilt glareEnable tiltEnable tiltMaxAngleX={30} tiltMaxAngleY={30} glareColor="#aaa6c3">
-        <div className="bg-tertiary w-full rounded-2xl p-5 sm:w-[300px] h-auto mx-auto">
+        <div className="bg-tertiary w-full rounded-2xl p-5 sm:w-[300px] md:w-full md:max-w-[350px] h-auto mx-auto">
           <div className="relative h-[230px] w-full ">
-            <img src={image} alt={name} className="h-full w-full rounded-2xl object-cover" />
+            <div className="flex justify-center items-center w-full h-auto ">
+              <img src={image} alt={name} className="h-[200px] w-full rounded-2xl object-fill" />
+            </div>
+
             <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
               <div
                 onClick={() => window.open(sourceCodeLink, '_blank')}
@@ -71,7 +74,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-8 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:justify-center md:justify-start gap-7 ">
+      <div className="mt-8 grid sm:grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 sm:justify-center lg:justify-start gap-7 ">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

@@ -3,7 +3,11 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../layout/Loader';
 
-const Computers: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
+// Computers component
+const Computers: React.FC<{ scale: number; position: [number, number, number] }> = ({
+  scale,
+  position,
+}) => {
   const computer = useGLTF('./desktop_pc/scene.gltf');
 
   return (
@@ -20,65 +24,54 @@ const Computers: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -4.25, -1.5]}
+        scale={scale}
+        position={position}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
   );
 };
 
-const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+// ComputersCanvas component
+const ComputersCanvas: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
-
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    };
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Responsive scale
+  let scale = 0.75; // default for large screens
+  if (windowWidth < 1024)
+    scale = 0.47; // small screens
+  else if (windowWidth < 1280) scale = 0.64; // medium screens
+
+  // Adjust position based on scale to keep model centered
+  const position: [number, number, number] = [0, -4.25 * scale, -1.5];
+
   return (
-    <>
-      {isMobile ? (
-        <></>
-      ) : (
-        <div className="w-[700px] h-full mx-auto">
-          <Canvas
-            frameloop="demand"
-            shadows
-            dpr={[1, 2]}
-            camera={{ position: [20, 3, 5], fov: 25 }}
-            gl={{ preserveDrawingBuffer: true }}
-          >
-            <Suspense fallback={<CanvasLoader />}>
-              <OrbitControls
-                enablePan={false}
-                enableZoom={false}
-                maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 2}
-              />
-              <Computers isMobile={isMobile} />
-            </Suspense>
-            <Preload all />
-          </Canvas>
-        </div>
-      )}
-    </>
+    <div className="mt-40 md:w-[700px] h-full md:mt-32 lg:mt-24 xl:mt-10 mx-auto">
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enablePan={false}
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers scale={scale} position={position} />
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </div>
   );
 };
 
