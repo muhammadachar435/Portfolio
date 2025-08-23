@@ -71,7 +71,7 @@ export const config: TConfig = {
       p: 'Introduction',
       h2: 'Overview.',
       content: [
-
+        "I'm a skilled MERN Stack Developer with expertise in React, Node.js, Express.js, and MongoDB, along with strong knowledge of HTML, CSS, and Tailwind CSS for responsive design. I also work with DevOps tools, Docker, Git/GitHub, and CI/CD pipelines to ensure smooth deployments. I collaborate closely with clients to build scalable, user-friendly applications that solve real-world problems.",
       ],
     },
 
@@ -79,9 +79,7 @@ export const config: TConfig = {
       p: 'What I’ve Built & Worked On',
       h2: 'Work Experience.',
       content: [
-        'I’m Muhammad Achar, a skilled MERN Stack Developer. I build modern and scalable web applications using React, Node.js, Express, and MongoDB. I focus on creating user-friendly interfaces and efficient back-end solutions that solve real-world problems.
-',
-        'My experience covers both front-end and back-end development, API integration, and database management.',
+        'Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively',
       ],
     },
 
