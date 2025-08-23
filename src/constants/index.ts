@@ -6,6 +6,8 @@ import type {
   TTestimonial,
   TProject,
 } from '../types';
+import womanImg from '../assets/woman.png';
+import man from '../assets/profile-hero.jpg';
 import devops from '../assets/devops.png'; // or .svg
 import fullStack from '../assets/fullStack.png';
 import reactlogo from '../assets/company/reactlogo.png';
@@ -189,7 +191,7 @@ const testimonials: TTestimonial[] = [
     name: 'Sarah Khan,',
     designation: 'Project Coordinator',
     company: 'Acme Co',
-    image: 'src/assets/woman.png',
+    image: womanImg,
   },
   {
     testimonial:
@@ -197,7 +199,7 @@ const testimonials: TTestimonial[] = [
     name: 'Ali Raza,',
     designation: 'Team Lead',
     company: 'Tech Solutions',
-    image: 'src/assets/profile-hero.jpg',
+    image: man,
   },
   {
     testimonial:
@@ -205,7 +207,7 @@ const testimonials: TTestimonial[] = [
     name: 'Dr. Ayesha Ahmed,',
     designation: 'Mentor',
     company: 'Innovate Labs',
-    image: 'src/assets/woman.png',
+    image: womanImg,
   },
 ];
 
