@@ -1,7 +1,6 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
-
 import { services } from '../../constants';
 import { SectionWrapper } from '../../hoc';
 import { fadeIn } from '../../utils/motion';
@@ -54,7 +53,8 @@ const About = () => {
       </div>
 
       {/* Services cards */}
-      <div className="mt-20 flex flex-wrap gap-6 justify-center lg:justify-start  mx-auto ">
+
+      <div className="mt-20 flex flex-wrap gap-6 justify-center lg:justify-start mx-auto ">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

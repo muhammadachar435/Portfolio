@@ -62,7 +62,7 @@ const services: TService[] = [
     icon: backend,
   },
   {
-    title: 'Full-Stack Developer',
+    title: 'Mern-Stack Developer',
     icon: fullStack,
   },
   {
@@ -160,7 +160,7 @@ const experiences: TExperience[] = [
     companyName: 'Self-Driven / Freelance Projects',
     icon: mongodblogo,
     iconBg: '#001E2B',
-    date: 'Jan 2025 – Present',
+    date: 'Oct 2025 – Present',
     points: [
       'Designed and managed MongoDB databases with Mongoose for efficient data handling',
       'Implemented secure authentication with OAuth & JWT.',
@@ -174,7 +174,7 @@ const experiences: TExperience[] = [
     companyName: 'Self-Driven / Freelance Projects',
     icon: cloud,
     iconBg: '#E6DEDD',
-    date: 'Jan 2025 – Present',
+    date: 'Nov 2025 – Present',
     points: [
       'Managed version control and collaboration with Git & GitHub.',
       'Deployed apps using Vercel, Netlify, and Azure.',
