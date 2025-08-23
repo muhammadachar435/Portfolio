@@ -42,7 +42,7 @@ export const config: TConfig = {
   html: {
     title: 'Muhammad Achar | MERN Stack Developer',
     fullName: 'Muhammad Achar',
-    email: 'muhammadachar@mail.com', // put your real email here
+    email: 'muhammadacharzardari69@gmail.com', // put your real email here
   },
 
   hero: {
