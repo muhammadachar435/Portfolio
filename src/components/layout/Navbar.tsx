@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { styles } from '../../constants/styles';
 import { navLinks } from '../../constants';
 import { logo, menu, close } from '../../assets';
 import { config } from '../../constants/config';
+import watsapImg from '../../assets/whatsapp.png';
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
@@ -55,7 +55,7 @@ const Navbar = () => {
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link to="https://wa.me/923048438299" target="blank" className="fixed bottom-7 right-7">
-          <img src="src/assets/whatsapp.png" alt="" className="w-12 h-12" />
+          <img src={watsapImg } alt="" className="w-12 h-12" />
         </Link>
         <Link
           to="/"
