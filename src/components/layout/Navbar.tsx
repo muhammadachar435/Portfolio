@@ -5,6 +5,8 @@ import { navLinks } from '../../constants';
 import { logo, menu, close } from '../../assets';
 import { config } from '../../constants/config';
 import watsapImg from '../../assets/whatsapp.png';
+import { FaGithub } from 'react-icons/fa';
+import Likedin from '../../assets/linkedin.png';
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
@@ -55,7 +57,8 @@ const Navbar = () => {
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
         <Link to="https://wa.me/923048438299" target="blank" className="fixed bottom-7 right-7">
-          <img src={watsapImg } alt="" className="w-12 h-12" />
+          <img src={watsapImg} alt="" className="w-12 h-12" />
+          <img src={watsapImg} alt="" className="w-12 h-12" />
         </Link>
         <Link
           to="/"
@@ -70,7 +73,7 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
+        <ul className="hidden list-none flex-row gap-10 sm:flex items-center">
           {navLinks.map(nav => (
             <li
               key={nav.id}
@@ -81,6 +84,22 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+
+          <li className="flex w-24 justify-end space-x-5 items-center">
+            <li>
+              <Link to="https://github.com/muhammadachar435" target="blank">
+                <FaGithub className="w-8 h-8" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="https://www.linkedin.com/in/muhammad-achar-80b6bb311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+                target="blank"
+              >
+                <img src={Likedin} alt="" className="w-8 h-8" />
+              </Link>
+            </li>
+          </li>
         </ul>
 
         <div className="flex flex-1 items-center justify-end sm:hidden">
