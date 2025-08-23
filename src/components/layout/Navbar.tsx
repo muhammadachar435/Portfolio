@@ -10,6 +10,7 @@ import Likedin from '../../assets/linkedin.png';
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
+  const [activeGit, setactiveGit] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -37,6 +38,7 @@ const Navbar = () => {
 
         if (sectionTop < 0 && sectionTop + sectionHeight > 0) {
           setActive(sectionId);
+          setactiveGit(0);
         }
       });
     };
@@ -128,6 +130,40 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              {/* <li className="flex w-24 justify-end space-x-5 items-center"> */}
+              <li>
+                <Link
+                  to="https://github.com/muhammadachar435"
+                  target="blank"
+                  onClick={() => {
+                    setactiveGit(1);
+                    setActive('');
+                    setToggle(!toggle);
+                  }}
+                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
+                    activeGit === 1 ? 'text-white' : 'text-secondary'
+                  }`}
+                >
+                  Github
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="https://www.linkedin.com/in/muhammad-achar-80b6bb311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+                  target="blank"
+                  onClick={() => {
+                    setactiveGit(2);
+                    setActive('');
+                    setToggle(!toggle);
+                  }}
+                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
+                    activeGit === 2 ? 'text-white' : 'text-secondary'
+                  }`}
+                >
+                  Linkedin
+                </Link>
+              </li>
+              {/* </li> */}
             </ul>
           </div>
         </div>
@@ -137,3 +173,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
