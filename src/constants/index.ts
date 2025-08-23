@@ -132,7 +132,7 @@ const experiences: TExperience[] = [
     companyName: 'Self-Driven / Freelance Projects',
     icon: reactlogo,
     iconBg: '#383E56',
-    date: 'Jan 2025 – Aug 2025',
+    date: 'Jan 2025 – Present',
     points: [
       'Developed interactive web applications using JavaScript (ES6+), React.js, Next.js, and TypeScript.',
       'Built 3D and animated experiences with React Three Fiber, Framer Motion, and Canvas API.',
