@@ -25,7 +25,7 @@ const Hero = () => {
           </p>
           <div className="my-2 w-36 h-auto p-2 rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 transition cursor-pointer flex items-center justify-center">
             <Link
-              to="https://drive.google.com/file/d/1xb0cb7MBXhh8stJ66EuNSpvzKA73Ip8Y/view?usp=sharing"
+              to="https://drive.google.com/file/d/1Z2lm8uaVShtsEN8uujFKJXmzTYdJ_kmG/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white font-sans font-medium"
